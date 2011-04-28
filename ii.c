@@ -433,7 +433,7 @@ static void run() {
 			FD_SET(c->fd, &rd);
 		}
 
-		tv.tv_sec = 120;
+		tv.tv_sec = 43200;  // changed the lost focus timeout to 12 hours
 		tv.tv_usec = 0;
 		r = select(maxfd + 1, &rd, 0, 0, &tv);
 		if(r < 0) {
